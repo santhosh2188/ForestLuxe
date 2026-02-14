@@ -1,0 +1,109 @@
+/* Basic styles for Craft Shop website */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background: linear-gradient(135deg, #FDEFF9 0%, #E7F0FD 100%);
+    background-attachment: fixed;
+}
+header {
+    /* use a forest image at images/forest.jpg for the background */
+    background: url('images/forest.jpg') no-repeat center/cover;
+    padding: 1rem;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* animated header title */
+header h1 {
+    animation: floatFade 4s ease-in-out infinite alternate;
+}
+
+@keyframes floatFade {
+    from { opacity: 0.7; transform: translateY(-10px); }
+    to   { opacity: 1;   transform: translateY(0); }
+}
+nav.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 200px;
+    background-color: rgba(255, 223, 186, 0.9); /* mild orange */
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+nav.sidebar a {
+    margin: 1rem 0;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+nav.sidebar a::before {
+    position: absolute;
+    left: 10px;
+    font-size: 1.2rem;
+}
+nav.sidebar a[href="#collections"]::before { content: "🖌️"; }
+nav.sidebar a[href="#about"]::before { content: "🎨"; }
+nav.sidebar a[href="#contact"]::before { content: "✉️"; }
+nav.sidebar a:hover {
+    background-color: rgba(255, 200, 150, 0.3);
+    color: #000;
+}
+nav.sidebar a:active {
+    background-color: rgba(255, 200, 150, 0.5);
+}
+/* adjust main content to avoid sidebar overlap */
+main {
+    margin-left: 220px;
+    padding: 1rem;
+}
+
+#hero {
+    background: #e0f7fa;
+    padding: 2rem;
+    text-align: center;
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.card {
+    margin: 1rem;
+    border: 1px solid #ccc;
+    padding: 1rem;
+    width: 200px;
+    text-align: center;
+}
+.card h3 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+.card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem;
+}
+footer {
+    background-color: #f8f8f8;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
